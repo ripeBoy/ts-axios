@@ -40,9 +40,8 @@ export function buildURL(
   }
 
   let serializedParams
-
   if (paramsSerializer) {
-    let serializedParams = paramsSerializer(params)
+    serializedParams = paramsSerializer(params)
   } else if (isURLSearchParams(params)) {
     serializedParams = params.toString()
   } else {
@@ -69,20 +68,19 @@ export function buildURL(
           val = JSON.stringify(val)
         }
 
-        parts.push(`${encode(key)}=$${encode(val)}`)
+        parts.push(`${encode(key)}=${encode(val)}`)
       })
     })
 
     serializedParams = parts.join('&')
+  }
+  if (serializedParams) {
+    const marIndex = url.indexOf('#')
 
-    if (serializedParams) {
-      const marIndex = url.indexOf('#')
-
-      if (marIndex !== -1) {
-        url = url.slice(0, marIndex)
-      }
-      url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams
+    if (marIndex !== -1) {
+      url = url.slice(0, marIndex)
     }
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams
   }
   return url
 }
@@ -93,7 +91,7 @@ export function buildURL(
  * @returns {boolean}
  */
 export function isAbsoluteURL(url: string): boolean {
-  return /(^[a-z][a-z\d\+\-\.]*:)?\/\//i.test(url)
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url)
 }
 
 /**

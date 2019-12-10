@@ -14,7 +14,6 @@ function createInstance(config: AxiosRequestConfig): AxiosStatic {
 
   return instance as AxiosStatic
 }
-
 const axios = createInstance(defaults)
 
 axios.create = function create(config) {

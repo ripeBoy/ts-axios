@@ -37,7 +37,7 @@ import qs from 'qs'
 //
 const instance = axios.create({
   transformRequest: [(function(data) {
-    return qs.stringify(data)
+    return 'foo=bar'
   }), ...(axios.defaults.transformRequest as AxiosTransformer[])],
   transformResponse: [...(axios.defaults.transformResponse as AxiosTransformer[]), function(data) {
     if (typeof data === 'object') {
@@ -49,8 +49,8 @@ const instance = axios.create({
 
 instance({
   url: '/config/post',
-  method: 'post',
-  data: {
+  method: 'get',
+  params: {
     a: 1
   }
 }).then((res) => {

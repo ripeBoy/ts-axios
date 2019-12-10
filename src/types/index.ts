@@ -65,7 +65,7 @@ export interface AxiosPromise<T = any> extends Promise<AxiosResponse<T>> {}
 export interface AxiosError extends Error {
   isAxiosError: boolean
   config: AxiosRequestConfig
-  code?: string | null
+  code?: string
   request?: any
   response?: AxiosResponse
 }
@@ -101,7 +101,7 @@ export interface Axios {
 export interface AxiosInstance extends Axios {
   <T = any>(config: AxiosRequestConfig): AxiosPromise<T>
 
-  <T = any>(url: string, config: AxiosRequestConfig): AxiosPromise<T>
+  <T = any>(url: string, config?: AxiosRequestConfig): AxiosPromise<T>
 }
 
 export interface AxiosClassStatic {

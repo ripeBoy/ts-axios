@@ -1,6 +1,6 @@
 {
-  "name": "ts-axios-new",
-  "version": "0.0.0",
+  "name": "browser-axios",
+  "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "dist/axios.umd.js",
@@ -12,7 +12,7 @@
   "author": "李强 <18893129924@163.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ripeBoy/ts-axios"
   },
   "license": "MIT",
   "engines": {

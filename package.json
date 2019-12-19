@@ -1,8 +1,12 @@
 {
   "name": "browser-axios",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
-  "keywords": ["browser-axios", "browser", "axios"],
+  "keywords": [
+    "browser-axios",
+    "browser",
+    "axios"
+  ],
   "main": "dist/axios.umd.js",
   "module": "dist/axios.es5.js",
   "typings": "dist/types/index.d.ts",

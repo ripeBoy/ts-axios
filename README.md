@@ -10,7 +10,7 @@ $ npm install browser-axios
 ```
 # Example
 ```$xslt
-import axios from
+import axios from 'browser-axios'
 
 const instance = axios.create()
 instance.interceptors.request.use((config) => {
